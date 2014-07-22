@@ -1,0 +1,51 @@
+/* Copyright (c) 2001-2014, xxx, Inc. All rights reserved.
+ * 
+ */
+
+/*
+ * DESCRIPTION
+ *
+ *
+ * PRIVATE CLASSES
+ *  <list of private classes defined - with one-line descriptions>
+ *
+ * NOTES
+ *
+ *
+ * MODIFIED    (YYYY/MM/DD)
+ *  jason     Jul 10, 2014 - Creation
+ */
+package com.jason.search.entities;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.persistence.Entity;
+import org.codehaus.jackson.annotate.JsonIgnore;
+import org.codehaus.jackson.annotate.JsonProperty;
+
+@Entity
+public class <py>print class_name,</py> implements Serializable {
+
+  private static final String docType = <py>print '"'+doc_type+'";'</py>
+<py>
+for field in field_list:
+    print "  private " + field[0] + " " + field[1] + ';\n',
+</py>
+
+  @JsonProperty("DOC_TYPE")
+  public String getDocType() {
+    return docType;
+  }
+
+<py>
+for field in field_list:
+    print '  @JsonProperty(%s)' % field[1]
+    print '  public String get%s() {' % field[1]
+    print '    return this.%s;' % field[1]
+    print '  }\n'
+</py>
+}
