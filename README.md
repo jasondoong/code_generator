@@ -29,7 +29,7 @@ doc_type = 'alEvent'
 field_list = [('int','eventId'),('String','stationName')]
 ```
 
-Execution result:<br>
+Execution output:<br>
 ```
 @Entity
 public class  AlEvent  implements Serializable {
