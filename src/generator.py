@@ -15,7 +15,7 @@ class Generator:
     def __init__(self):
         self.before_code_string = ''
         self.after_code_string = ''
-        self. code = ''
+        self.code = ''
         self.line_it = None
 
     def execute(self):
@@ -64,8 +64,8 @@ class Generator:
         if self.is_string_null(self.after_code_string):
             return
         '''
-          String after code may contains another code
-          ex: <py> print 'public'</py> static <py> print func_name</py> {
+          Notice: String after code may contains another code
+                      ex: <py> print 'public'</py> static <py> print func_name</py> {
         '''
         self.process_line(self.after_code_string)
     
