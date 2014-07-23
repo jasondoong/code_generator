@@ -1,6 +1,3 @@
-code_generator
-==============
-
 # Introduction
 This program is used to generate text from template. It will run python script between ```<py> </py>``` in template.
 
