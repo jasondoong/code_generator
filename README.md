@@ -1,30 +1,40 @@
 code_generator
 ==============
 
-put your template in template.txt<br>
-put your data in data.py<br>
-then run generator.py<br>
+# Introduction
+This program is used to generate text from template. It will run python script between ```<py> </py>``` in template.
+
+# Steps
+1. Put your template in template.txt<br>
+2. Put your data in data.py<br>
+3. Execute generator.py<br>
 <br>
-template example:<br>
-public class <py>print class_name,</py> implements Serializable {<br>
-<br>
-  private static final String docType = <py>print '"'+doc_type+'";'</py><br>
-<py><br>
-for field in field_list:<br>
-    print "  private " + field[0] + " " + field[1] + ';\n',<br>
-</py><br>
 
+#Example
+template.txt:<br>
+```
+public class <py>print class_name,</py> implements Serializable {
 
-data example:<br>
-class_name = 'AlEvent'<br>
-doc_type = 'alEvent'<br>
-field_list = [('int','eventId'),('String','stationName')]<br>
+  private static final String docType = <py>print '"'+doc_type+'";'</py>
+<py>
+for field in field_list:
+    print "  private " + field[0] + " " + field[1] + ';\n',
+</py>
+```
 
-execution result:<br>
-@Entity<br>
-public class  AlEvent  implements Serializable {<br>
-<br>
-  private static final String docType =  "alEvent";<br>
-  private int eventId;<br>
-  private String stationName;<br>
+data.py:<br>
+```
+class_name = 'AlEvent'
+doc_type = 'alEvent'
+field_list = [('int','eventId'),('String','stationName')]
+```
 
+Execution result:<br>
+```
+@Entity
+public class  AlEvent  implements Serializable {
+
+  private static final String docType =  "alEvent";
+  private int eventId;
+  private String stationName;
+```
